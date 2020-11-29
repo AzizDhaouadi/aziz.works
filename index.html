@@ -14,6 +14,52 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+
+        <!-- Tooltip Scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script>
+           $(document).ready(function(){
+               $('[data-toggle="tooltip"]').tooltip();
+           });
+        </script>
+        <!-- Contact Form -->
+        <script>
+            function openForm(){
+                document.getElementById("contactForm").style.display="block";
+            }
+            function closeForm(){
+                document.getElementById("contactForm").style.display="none";
+            }
+        </script>     
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Aziz Dhaouadi",
+                "url": "127.0.0.1/index.html",
+                "jobTitle": "Marketing Specialist",
+                "alumniOf": "Tunis Business School",
+                "knowsLanguage": [
+                {
+                      "@type": "Language",
+                        "name": "Arabic",
+                        "alternateName": "ar"
+                    },
+                    {
+                        "@type": "Language",
+                        "name": "French",
+                        "alternateName": "fr"    
+                    },
+                    {
+                        "@type": "Language",
+                        "name": "English",
+                        "alternateName": "eng"
+                    }
+                    ] 
+            }
+        </script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -45,19 +91,59 @@
 
                     </h1>
                     <div class="subheading mb-3">
-                        <span class="text-primary">Cross-Disciplinary</span> Professional
+                        <span class="text-primary">Cross-Disciplinary</span> Professional <span class="inbox" onclick="openForm()"> &#x1f4e5;</span>
                        
                     </div>
+                    <div id="contactForm" class="modal">
+                        <form action="mail.php" method="POST" class="modal-content animate">
+                            <div class="imgcontainer">
+                                <span onclick="closeForm()" class="close" title="Close Contact Form">&times;</span>
+                            </div>
+                            <div class="container">
+                                <div class="form-group">
+                                    <label for="username">Your Name</label>
+                                    <input type="text" class="form-control" id="uname" name="name" placeholder="Enter your full name" required>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="uemail">Your Email</label>
+                                    <input type="email" class="form-control" id="uemail" name="email" aria-describedby="emailHelp" placeholder="Enter your email" required>
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="usubject">Subject</label>
+                                    <input type="text" class="form-control" id="usebject" name="subject" placeholder="Subject" required>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="umessage">Your Message</label>
+                                    <textarea type="text" class="form-control" id="umessage" name="message" placeholder="Your Message" rows="2" required></textarea>
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Send</button>
+                            </div>   
+                        </form>
+                    </div>
+                    <script>
+                        // Get the modal
+                        var modal = document.getElementById('contactForm');
+                        
+                        // When the user clicks anywhere outside of the modal, close it
+                        window.onclick = function(event) {
+                            if (event.target == modal) {
+                                modal.style.display = "none";
+                            }
+                        }
+                    </script>       
                     <div class="subheading mb-5">
-                        3025 Avenue Linton · Montreal, QC H3S1S4 · (514) 386-9713 ·
-                        <a href="mailto:name@email.com">mazizdhouadi@gmail.com</a>
+                       Montreal, Quebec
                     </div>
                     <p class="lead mb-5">I am experienced in B2B Digital Marketing, user-focused Marketing approaches, and Marketing reasearch and analysis. My experience lies in the ad tech industy, as well as, mobile application development industy.</p>
                     <p class="lead mb-5">I am systematic thinker and strategist with a data-driven approach for problem solving. I am also passitionate about marrying theory and conceptual thinking with practice.</p>
+                    <div class="subheading mb-3">
+                        LET'S CONNECT:
+                       
+                    </div>
                     <div class="social-icons">
                         <a class="social-icon" href="https://www.linkedin.com/in/aziz-dhaouadi/" rel="no-opener no-referrer" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                         <a class="social-icon" href="#"><i class="fab fa-github"></i></a>
-                        <a class="social-icon" href="#"><i class="fab fa-facebook-f"></i></a>
                         <a class="social-icon" href="https://vocal.media/authors/aziz-dhaouadi-1" rel="no-opener no-referrer" target="_blank"><i class="fab fa-medium"></i></a>
                     </div>
                 </div>
@@ -71,12 +157,13 @@
                         <div class="flex-grow-1">
                             <h3 class="mb-0">Marketing Specialist</h3>
                             <div class="subheading mb-3">TrafficJunky</div>
-                            <p>Monitoring performance across the different customer touchpoints using Web analytics platforms. 
-                                Genering user-focused content to help them in their onboarding and nurture the users to reduce churn. 
-                                Planning data-driven retention strategies based as well as partnerships to expand and maintain user base.
-                                Creating new processes for fast access to relevant data as well as working on efficient documentation for workflows.
-                                Automating monotonous tasks for faster results and better time efficiency for the team.
-                            </p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Monitoring performance across the different customer touchpoints using Web analytics platforms.</li>
+                                <li class="list-group-item">Genering user-focused content to help them in their onboarding and nurture the users to reduce churn.</li>
+                                <li class="list-group-item">Planning data-driven retention strategies based as well as partnerships to expand and maintain user base.</li>
+                                <li class="list-group-item">Creating new processes for fast access to relevant data as well as working on efficient documentation for workflows.</li>
+                                <li class="list-group-item">Automating monotonous tasks for faster results and better time efficiency for the team.</li>
+                            </ul>
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">March 2020 - Present</span></div>
                     </div>
@@ -84,10 +171,12 @@
                         <div class="flex-grow-1">
                             <h3 class="mb-0">Marketing Manager</h3>
                             <div class="subheading mb-3">Brossard App Design</div>
-                            <p>Increased the companie's click-through rate by 30% through boosting organic ranking using technical and on-page Search Engine Optimization techniques.
-                                Increased the engagement site wide through on-page Search Engine Optimization techniques as well as user-centric content.
-                                Worked with the developers to implement a mobile-first design and development approach
-                                Monitored and optimized website speed, content indexation and other Key Performance Indicators of the company.</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Increased the companie's click-through rate by 30% through boosting organic ranking using technical and on-page Search Engine Optimization techniques.</li>
+                                <li class="list-group-item"> Increased the engagement site wide through on-page Search Engine Optimization techniques as well as user-centric content.</li>
+                                <li class="list-group-item">Worked with the developers to implement a mobile-first design and development approach</li>
+                                <li class="list-group-item">Monitored and optimized website speed, content indexation and other Key Performance Indicators of the company.</li>
+                            </ul>
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">January 2019 - March 2020</span></div>
                     </div>
@@ -96,8 +185,10 @@
                         <div class="flex-grow-1">
                             <h3 class="mb-0">Project Assistant</h3>
                             <div class="subheading mb-3">Tunis Business School - Ministry of Industry and Commerce</div>
-                            <p>Worked directly with the Tunisian Ministry of Industry and Commerce on a project initiated by the Innovation Lab at Tunis Business School
-                                to improve Tunisia's rankking in the Global Innovation Index. </p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Worked directly with the Tunisian Ministry of Industry and Commerce on a project initiated by the Innovation Lab at Tunis Business School
+                                    to improve Tunisia's rankking in the Global Innovation Index. </li>
+                            </ul>
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">November 2017 - April 2018</span></div>
                     </div>
@@ -146,14 +237,12 @@
                     <h2 class="mb-5">Skills</h2>
                     <div class="subheading mb-3">Programming Languages & Tools</div>
                     <ul class="list-inline dev-icons">
-                        <li class="list-inline-item"><i class="fab fa-html5"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-css3-alt"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-js-square"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-wordpress"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-python"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-git"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-jira"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-confluence"></i></li>
+                        <li class="list-inline-item"><i class="fab fa-html5" data-toggle="tooltip" title="HTML"></i></li>
+                        <li class="list-inline-item"><i class="fab fa-css3-alt" data-toggle="tooltip" title="CSS"></i></li>
+                        <li class="list-inline-item"><i class="fab fa-wordpress" data-toggle="tooltip" title="WordPress"></i></li>
+                        <li class="list-inline-item"><i class="fab fa-git" data-toggle="tooltip" title="Git"></i></li>
+                        <li class="list-inline-item"><i class="fab fa-jira" data-toggle="tooltip" title="Jira"></i></li>
+                        <li class="list-inline-item"><i class="fab fa-confluence" data-toggle="tooltip" title="Confluence"></i></li>
                     </ul>
                     <div class="subheading mb-3">Anaytics & Search Engine Tools</div>
                     <ul class="fa-ul mb-0">
@@ -206,34 +295,36 @@
                     <h2 class="mb-5">Current Learning Path & Interests</h2>
                     <div class="subheading mb-3">Programming Languages</div>
                     <ul class="list-inline dev-icons">
-                        <li class="list-inline-item"><i class="fab fa-react"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-node"></i></li>
+                        <li class="list-inline-item"><i class="fab fa-python" data-toggle="tooltip" title="Python"></i></li>
+                        <li class="list-inline-item"><i class="fab fa-js-square" data-toggle="tooltip" title="JavaScript"></i></li>
+                        <li class="list-inline-item"><i class="fab fa-react" data-toggle="tooltip" title="ReactJS"></i></li>
+                        <li class="list-inline-item"><i class="fab fa-node" data-toggle="tooltip" title="NodeJS"></i></li>
                        
                     </ul>
                     <div class="subheading mb-3">Data Analysis</div>
                     <ul class="fa-ul mb-0">
                         <li>
-                            <span class="fa-li"><i class="fas fa-circle-notch fa-spin"></i></span>
+                            <span class="fa-li"><i class="fas fa-check"></i></span>
                             SQL
                         </li>
                         <li>
-                            <span class="fa-li"><i class="fas fa-circle-notch fa-spin"></i></span>
+                            <span class="fa-li"><i class="fas fa-check"></i></span>
                             Tableau
                         </li>
                         <li>
-                            <span class="fa-li"><i class="fas fa-circle-notch fa-spin"></i></span>
+                            <span class="fa-li"><i class="fas fa-check"></i></span>
                             Pandas
                         </li>
                         <li>
-                            <span class="fa-li"><i class="fas fa-circle-notch fa-spin"></i></span>
+                            <span class="fa-li"><i class="fas fa-check"></i></span>
                             NumPy
                         </li>
                         <li>
-                            <span class="fa-li"><i class="fas fa-circle-notch fa-spin"></i></span>
+                            <span class="fa-li"><i class="fas fa-check"></i></span>
                             SciPy
                         </li>
                         <li>
-                            <span class="fa-li"><i class="fas fa-circle-notch fa-spin"></i></span>
+                            <span class="fa-li"><i class="fas fa-check"></i></span>
                             Matplotlib
                         </li>
                     </ul>
@@ -278,7 +369,6 @@
                         </li>
                         <li>
                             <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                        
                             Responsive Web Design
                         </li>
                         <li>

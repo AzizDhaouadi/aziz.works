@@ -810,8 +810,8 @@ pre code {
     flex-basis: 0;
     flex-grow: 1;
     max-width: 100%;
+    
   }
-
   .row-cols-sm-1 > * {
     flex: 0 0 100%;
     max-width: 100%;
@@ -7487,7 +7487,7 @@ button.bg-dark:focus {
 
 .mb-0,
 .my-0 {
-  margin-bottom: 0 !important;
+  margin-bottom: 1rem !important;
 }
 
 .ml-0,
@@ -10098,7 +10098,7 @@ section.resume-section .resume-section-content {
 
 @media (min-width: 768px) {
   section.resume-section {
-    min-height: 100vh;
+    min-height: 60vh;
   }
 }
 @media (min-width: 992px) {
@@ -10376,4 +10376,8 @@ span.psw {
 
 .space{
   line-height: 2rem;
+}
+
+.bspace {
+  margin-bottom: 1.5rem;
 }

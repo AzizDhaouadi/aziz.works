@@ -10249,6 +10249,12 @@ span.psw {
   }
 }
 
+@media (max-width: 1200px){
+  #terminal {
+    content-visibility: hidden;
+  }
+}
+
 #terminal #terminal-container .overlay {
   position: absolute;
   background-color: #FFF;

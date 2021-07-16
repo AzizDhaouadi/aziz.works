@@ -550,6 +550,14 @@ pre code {
   cursor: pointer;
 }
 
+span.inbox  a{
+  font-style: initial;
+}
+
+span.inbox a:hover{
+  text-decoration: none;
+}
+
 @media (min-width: 576px) {
   .container-sm, .container {
     max-width: 540px;
